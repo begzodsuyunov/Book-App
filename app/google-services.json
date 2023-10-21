@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "77002853256",
+    "firebase_url": "https://ussd-code-uz-default-rtdb.firebaseio.com",
+    "project_id": "ussd-code-uz",
+    "storage_bucket": "ussd-code-uz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77002853256:android:36790b0ecafb3200ef083d",
+        "android_client_info": {
+          "package_name": "com.example.bookapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77002853256-76dokh3bmjk56no1qkbdul04ttgs7tjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlKA3G-LnVN2I6w_qQWBzGOaITD-45zSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77002853256-76dokh3bmjk56no1qkbdul04ttgs7tjh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

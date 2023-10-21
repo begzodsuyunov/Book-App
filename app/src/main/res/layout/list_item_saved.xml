@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/bg_app"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/image_book"
+        android:layout_width="64dp"
+        android:layout_height="76dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/steve"
+        app:shapeAppearanceOverlay="@style/ShapeImageView" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:padding="2dp"
+        tools:ignore="UselessLeaf">
+
+        <TextView
+            android:id="@+id/tv_book_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="16sp"
+            tools:text="Steve Jobs" />
+
+        <TextView
+            android:id="@+id/tv_book_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_book_name"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/hint_color"
+            android:textSize="13sp"
+            tools:text="Walter Isaacson"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_book_read_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="Read page : 32" />
+
+        <TextView
+            android:id="@+id/tv_book_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="24dp"
+            android:layout_toEndOf="@id/tv_book_read_page"
+            android:textColor="@color/hint_color"
+            android:textSize="12sp"
+            tools:text="All pages : 132" />
+
+    </RelativeLayout>
+
+</LinearLayout>

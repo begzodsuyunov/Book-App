@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back_to_main"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_book"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="-26sp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/steve"
+            app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
+            app:layout_constraintDimensionRatio="1:1.2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.9"
+            app:shapeAppearanceOverlay="@style/ShapeImageView" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:padding="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/progress_download"
+            app:layout_constraintEnd_toEndOf="@+id/image_book"
+            app:layout_constraintStart_toStartOf="@+id/image_book"
+            app:layout_constraintTop_toBottomOf="@+id/image_book"
+
+            tools:ignore="UselessLeaf">
+
+
+            <TextView
+                android:id="@+id/tv_book_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:text="Steve Jobs" />
+
+            <TextView
+                android:id="@+id/tv_book_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_book_name"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="Walter Isaacson"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_book_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:text="132 pages" />
+
+            <TextView
+                android:id="@+id/current_page_if_read"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv_book_page"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="24dp"
+                android:layout_toEndOf="@+id/tv_book_page"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:text="132 pages" />
+
+
+        </RelativeLayout>
+
+
+        <ProgressBar
+            android:id="@+id/progress_download"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:progress="20"
+            android:progressBackgroundTint="@color/app_color"
+            android:progressTint="@color/title"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/btnDownloadOrReading"
+            app:layout_constraintEnd_toStartOf="@id/tv_download_percent"
+            app:layout_constraintStart_toStartOf="@id/btnDownloadOrReading"
+            app:layout_constraintTop_toBottomOf="@id/relativeLayout" />
+
+        <TextView
+            android:id="@+id/tv_download_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/progress_download"
+            app:layout_constraintEnd_toEndOf="@id/btnDownloadOrReading"
+            app:layout_constraintStart_toEndOf="@id/progress_download"
+            app:layout_constraintTop_toTopOf="@id/progress_download"
+            tools:text="73%" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDownloadOrReading"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_btn_app"
+            android:text="@string/download"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/tv_about"
+            app:layout_constraintEnd_toStartOf="@+id/make_favorite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progress_download" />
+
+        <ImageView
+            android:id="@+id/make_favorite"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_btn_app"
+            android:padding="6dp"
+            android:src="@drawable/ic_baseline_star_outline_24"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/btnDownloadOrReading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnDownloadOrReading"
+            app:layout_constraintTop_toTopOf="@+id/btnDownloadOrReading" />
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/about"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnDownloadOrReading" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/poppins"
+            android:justificationMode="inter_word"
+            android:scrollbars="vertical"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_about"
+            tools:ignore="UnusedAttribute"
+            tools:text="@tools:sample/lorem[200]" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
